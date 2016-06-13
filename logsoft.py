@@ -1,11 +1,22 @@
+'''
+-----------------------------------------------------------------------------
+                                logsoft.py
+-----------------------------------------------------------------------------                         
+Created on 13.06.2016
+Last modified on 13.06.2016
+Author: Marc Wieland
+Description: Very simple event logger script with pyqt interface.
+Dependencies: Python 2.7, PyQt
+----
+'''
+import os
 import sys
 import datetime
-from PyQt4 import QtGui, uic #, QtCore
+from PyQt4 import QtGui, uic
 
-
-# Define UI and log files
-qtCreatorFile = 'logsoft.ui'
-logfile = 'log.csv'
+# Define location of ui and log files
+qtCreatorFile = os.path.abspath('logsoft.ui')
+logfile = os.path.abspath('log.csv')
 
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtCreatorFile)
  
@@ -19,26 +30,30 @@ class DataLog(QtGui.QMainWindow, Ui_MainWindow):
         self.niskinBottleClosedButton.clicked.connect(self.niskinBottleClosed)
         self.transectVideoStartButton.clicked.connect(self.transectVideoStart)
         self.transectVideoStopButton.clicked.connect(self.transectVideoStop)
+        self.closeDataLogButton.clicked.connect(self.closeDataLog)
         
-    def pushCoreTaken(self, log):
+    def pushCoreTaken(self):
         t = datetime.datetime.now()
-        with open(logfile, "a") as log:
-            log.write(str(t) + ";Push core taken\n")
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Push core taken\n')
         
     def niskinBottleClosed(self):
         t = datetime.datetime.now()
-        with open(logfile, "a") as log:
-            log.write(str(t) + ";Niskin bottle closed\n")
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Niskin bottle closed\n')
  
     def transectVideoStart(self):
         t = datetime.datetime.now()
-        with open(logfile, "a") as log:
-            log.write(str(t) + ";Transect video started\n")
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Transect video started\n')
         
     def transectVideoStop(self):
         t = datetime.datetime.now()
-        with open(logfile, "a") as log:
-            log.write(str(t) + ";Transect video stopped\n")
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Transect video stopped\n')
+    
+    def closeDataLog(self):
+        self.close()
   
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
