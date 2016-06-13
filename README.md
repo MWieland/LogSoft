@@ -1,5 +1,5 @@
 # LogSoft
-A very simple event logger script with pyqt interface
+A very simple event logger script with pyqt interface. Events are logged in log.csv "on click".
 
 ## Dependencies:
 - Python 2.7
