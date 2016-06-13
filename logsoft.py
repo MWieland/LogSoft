@@ -36,22 +36,30 @@ class DataLog(QtGui.QMainWindow, Ui_MainWindow):
         t = datetime.datetime.now()
         with open(logfile, 'a') as log:
             log.write(str(t) + ',Push core taken\n')
+        self.lastEventLogTextbox.setText('Push core taken')
+        self.lastTimeLogTextbox.setText(str(t))
         
     def niskinBottleClosed(self):
         t = datetime.datetime.now()
         with open(logfile, 'a') as log:
             log.write(str(t) + ',Niskin bottle closed\n')
+        self.lastEventLogTextbox.setText('Niskin bottle closed')
+        self.lastTimeLogTextbox.setText(str(t))
  
     def transectVideoStart(self):
         t = datetime.datetime.now()
         with open(logfile, 'a') as log:
             log.write(str(t) + ',Transect video started\n')
-        
+        self.lastEventLogTextbox.setText('Transect video started')
+        self.lastTimeLogTextbox.setText(str(t))
+           
     def transectVideoStop(self):
         t = datetime.datetime.now()
         with open(logfile, 'a') as log:
             log.write(str(t) + ',Transect video stopped\n')
-    
+        self.lastEventLogTextbox.setText('Transect video stopped')
+        self.lastTimeLogTextbox.setText(str(t))
+        
     def closeDataLog(self):
         self.close()
   
