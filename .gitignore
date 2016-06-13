@@ -1,0 +1,7 @@
+#ignore temp files
+*~
+#ignore compiled python files
+*.pyc
+#ignore eclipse project files
+*.project
+*.pydevproject
