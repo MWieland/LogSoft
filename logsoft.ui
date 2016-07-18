@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>883</width>
-    <height>263</height>
+    <width>668</width>
+    <height>482</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushCoreTakenButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>240</x>
       <y>20</y>
       <width>191</width>
       <height>151</height>
@@ -30,7 +30,7 @@
    <widget class="QPushButton" name="niskinBottleClosedButton">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>450</x>
       <y>20</y>
       <width>191</width>
       <height>151</height>
@@ -43,8 +43,8 @@
    <widget class="QPushButton" name="transectVideoStartButton">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>20</y>
+      <x>30</x>
+      <y>190</y>
       <width>191</width>
       <height>151</height>
      </rect>
@@ -56,8 +56,8 @@
    <widget class="QPushButton" name="transectVideoStopButton">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>20</y>
+      <x>240</x>
+      <y>190</y>
       <width>191</width>
       <height>151</height>
      </rect>
@@ -69,8 +69,8 @@
    <widget class="QPushButton" name="closeDataLogButton">
     <property name="geometry">
      <rect>
-      <x>750</x>
-      <y>180</y>
+      <x>530</x>
+      <y>380</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -86,8 +86,8 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>180</y>
-      <width>161</width>
+      <y>355</y>
+      <width>251</width>
       <height>27</height>
      </rect>
     </property>
@@ -96,7 +96,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>185</y>
+      <y>360</y>
       <width>121</width>
       <height>17</height>
      </rect>
@@ -111,8 +111,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>180</y>
+      <x>160</x>
+      <y>385</y>
       <width>251</width>
       <height>27</height>
      </rect>
@@ -121,8 +121,8 @@
    <widget class="QLabel" name="lastTimeLogLabel">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>185</y>
+      <x>30</x>
+      <y>390</y>
       <width>121</width>
       <height>17</height>
      </rect>
@@ -131,13 +131,39 @@
      <string>Last time logged</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="sampleTakenButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>191</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Sample taken</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="otherEventButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>190</y>
+      <width>191</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Other event</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>883</width>
+     <width>668</width>
      <height>25</height>
     </rect>
    </property>

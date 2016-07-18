@@ -3,7 +3,7 @@
                                 logsoft.py
 -----------------------------------------------------------------------------                         
 Created on 13.06.2016
-Last modified on 13.06.2016
+Last modified on 18.07.2016
 Author: Marc Wieland
 Description: Very simple event logger script with pyqt interface.
 Dependencies: Python 2.7, PyQt
@@ -26,12 +26,21 @@ class DataLog(QtGui.QMainWindow, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
         # Connect buttons with functions
+        self.sampleTakenButton.clicked.connect(self.sampleTaken)
         self.pushCoreTakenButton.clicked.connect(self.pushCoreTaken)
         self.niskinBottleClosedButton.clicked.connect(self.niskinBottleClosed)
         self.transectVideoStartButton.clicked.connect(self.transectVideoStart)
         self.transectVideoStopButton.clicked.connect(self.transectVideoStop)
         self.closeDataLogButton.clicked.connect(self.closeDataLog)
-        
+        self.otherEventButton.clicked.connect(self.otherEvent)        
+
+    def sampleTaken(self):
+        t = datetime.datetime.now()
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Sample taken\n')
+        self.lastEventLogTextbox.setText('Sample taken')
+        self.lastTimeLogTextbox.setText(str(t))
+             
     def pushCoreTaken(self):
         t = datetime.datetime.now()
         with open(logfile, 'a') as log:
@@ -58,6 +67,13 @@ class DataLog(QtGui.QMainWindow, Ui_MainWindow):
         with open(logfile, 'a') as log:
             log.write(str(t) + ',Transect video stopped\n')
         self.lastEventLogTextbox.setText('Transect video stopped')
+        self.lastTimeLogTextbox.setText(str(t))
+        
+    def otherEvent(self):
+        t = datetime.datetime.now()
+        with open(logfile, 'a') as log:
+            log.write(str(t) + ',Other event\n')
+        self.lastEventLogTextbox.setText('Other event')
         self.lastTimeLogTextbox.setText(str(t))
         
     def closeDataLog(self):
